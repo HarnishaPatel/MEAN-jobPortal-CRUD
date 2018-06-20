@@ -1,0 +1,6 @@
+<button class='btn glyphicon glyphicon-thumbs-up' *ngIf='!toggleLike' (click)='like()'></button>
+<button class='btn glyphicon glyphicon-thumbs-down' *ngIf='toggleLike' (click)='unlike()'></button> 
+<button class='btn btn-primary' (click)='getliker()'>Likers</button>
+<ul *ngFor='let like of likes'>
+  <li>{{like.like_user_name}}</li>
+</ul>

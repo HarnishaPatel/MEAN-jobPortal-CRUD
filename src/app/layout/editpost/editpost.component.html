@@ -1,0 +1,31 @@
+
+<button class='btn btn-warning btn-sm glyphicon glyphicon-pencil' (click)="openModal()" >Edit</button>
+<button class='btn btn-danger btn-sm glyphicon glyphicon-trash' (click)="deletePost(PostCliked._id)"> Delete</button>
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+  <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Edit post</h4>  
+        </div>
+      <div class="modal-body">
+        
+        <!-- Post title -->
+        <div class="input-group" style="min-width: 100%" >
+            <input type='text' class="form-control" aria-label="With textarea" [(ngModel)]='PostCliked.post_title'>
+        </div>
+        <!-- Post Description -->
+        <div class="input-group" style="min-width: 100% ; height:100%" >
+            <textarea class="form-control" aria-label="With textarea" [(ngModel)]='PostCliked.post_description'></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onSavePost(PostCliked)" >Save</button>
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

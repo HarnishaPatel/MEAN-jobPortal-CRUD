@@ -1,0 +1,31 @@
+
+<div class='row'>
+  <div class='col-md-offset-1 col-md-10 col-xs-8'>
+
+      <div class='panel panel-warning'>
+          <div class='panel-heading'>
+            Create Post
+          </div>
+          <div class='panel-body'>
+              <form>
+                  <div class="form-group">
+                      <label for="productName">Post Title</label>
+                      <input type="text" [(ngModel)]='createPost.title' name='title' class="form-control"  placeholder="Title ">
+                  </div>
+                  <div class="form-group">
+                    <label for="productName">Post Description</label>
+                    <input type="text"  [(ngModel)]='createPost.description' name='description' class="form-control"  placeholder="Description ">
+                  </div>
+                  <div class="form-group">
+                    <button class='btn btn-success' (click)="createPostFn()" >Submit</button>
+                    <button class='btn btn-warning' >Cancel</button>
+                  </div>
+                  <div class="form-group">
+                    <a [routerLink]='["/home"]' >Go Back</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>  
+

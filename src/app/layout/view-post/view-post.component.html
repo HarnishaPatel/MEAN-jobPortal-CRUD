@@ -1,0 +1,17 @@
+
+<div class='container'>
+  <div *ngFor='let post of posts ; let i=index'>
+      <ul class='list-group'>
+        <li class='list-group-item'>
+          <h3>{{post.post_title}}</h3> 
+          <app-editpost [PostCliked]='post' (notify)='postToDelete($event)' id='btneditpost'></app-editpost>
+          <hr>  
+          <p>{{post.post_description}}</p>
+          <hr>
+          <button class='btn btn-success glyphicon glyphicon-comment' (click)='commentTmpl.comments(post._id)' ></button>
+          <app-like [PostCliked]="post._id"></app-like>
+          <app-comments #commentTmpl ></app-comments>
+        </li>
+      </ul>
+  </div>
+</div>

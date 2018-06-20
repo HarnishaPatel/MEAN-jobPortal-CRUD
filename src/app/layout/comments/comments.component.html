@@ -1,0 +1,13 @@
+<div *ngIf="toggleCommentCntr">
+  <hr>
+  <div *ngFor='let comment of commentsToShow'>
+      <a class='glyphicon glyphicon-remove' style="color:red" (click)='deleteComment(comment._id)'></a>  
+      <span>{{comment.comment_body}}</span>
+  </div>
+  <div class='input-group'>
+      <input type='text' class='form-control' [(ngModel)]="cmt.commentbody" name='commentbody' placeholder="Add Comment">
+      <span class='input-group-btn'>
+        <button class='btn btn-primary glyphicon glyphicon-plus' (click)='addComment()'></button>
+      </span>
+  </div>
+</div> 
